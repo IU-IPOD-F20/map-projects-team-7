@@ -11,9 +11,12 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 
 2. Trello (https://trello.com/b/E49e39if/quizgame)
 
+#### Organization
+Sprint meetings on Monday, Wednesday and Friday at 12am.
 
+Discussion of the next sprint on Saturday at 9am.
 
-#### Technology Stack
+##### Technology Stack
 ... - Front end.
 
 ... - Back end.
