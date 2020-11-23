@@ -8,9 +8,11 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 
 # Technology Stack
 ... - Front end.
+
 ... - Back end.
 
 
 # Team
 Kamil Alimov (k.alimov@innopolis.ru)
+
 Egor Klementev (e.klementev@innopolis.ru)
