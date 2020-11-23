@@ -7,6 +7,8 @@ Implement application for creating the tests and easy to use everyone to take co
 User-friendly interface, the ability to edit the test, setting the test of time, deadlines, etc.
 
 # Technology Stack
+... - Front end.
+... - Back end.
 
 
 # Team
