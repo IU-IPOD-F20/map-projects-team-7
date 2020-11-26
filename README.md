@@ -31,5 +31,4 @@ Jenkins for CI/CD.
 
 ##### Team
 Kamil Alimov (k.alimov@innopolis.ru)
-
 Egor Klementev (e.klementev@innopolis.ru)
