@@ -12,6 +12,7 @@ public:
 
 private slots:
     void test_case1();
+    void test_case2();
 
 };
 
@@ -29,6 +30,12 @@ void QuizGame::test_case1()
 {
     QString test = "Hello, Tests!!!";
     QCOMPARE(test, "Hello, Tests!!!");
+}
+
+void QuizGame::test_case2()
+{
+    QString test = "Hello, New Tests!!!";
+    QCOMPARE(test, "Hello, New Tests!!!");
 }
 
 QTEST_APPLESS_MAIN(QuizGame)
