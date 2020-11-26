@@ -8,6 +8,9 @@ It should allow users to read the question, read the answers and choose the righ
 
 User-friendly interface, the ability to edit the test, setting the test of time, deadlines, etc.  
 
+## Build status:
+[![Build Status](http://18.223.159.68:8080/job/QuizGame/badge/icon)](http://18.223.159.68:8080/job/QuizGame/)
+
 ### Project management:
 1. Repository (https://github.com/IU-IPOD-F20/map-projects-team-7)
 
@@ -23,7 +26,8 @@ Discussion of the next sprint on Saturday at 9am.
 
 ### Technology Stack
 QtCreator for desktop applications.  
-C++ programming language.  
+We use C++ programming language.  
+Jenkins for CI/CD.  
 
 ##### Team
 Kamil Alimov (k.alimov@innopolis.ru)
