@@ -18,7 +18,7 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 
 ### Organization
 Sprint meetings on Monday, Wednesday and Friday at 12am.  
-Discussion of the next sprint on Saturday at 9am.
+Discussion of the next sprint on Saturday at 9am.  
 
 #### Branch conventions
 - fix/branch_name  -  for fixes
