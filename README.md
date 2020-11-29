@@ -22,7 +22,7 @@ Discussion of the next sprint on Saturday at 9am.
 
 #### Sprint 1 burn down chart
 
-![burn down](img src="https://i.imgur.com/iifr9X6.png" width="48" )
+![burn down](https://i.imgur.com/iifr9X6.png){:height="24px" width="48px"}
 
 
 #### Branch conventions
