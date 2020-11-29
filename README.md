@@ -32,3 +32,7 @@ Jenkins for CI/CD.
 ##### Team
 Kamil Alimov (k.alimov@innopolis.ru)
 Egor Klementev (e.klementev@innopolis.ru)
+
+## Sprint Reviews
+
+![Sprint Evaluations](https://docs.google.com/spreadsheets/d/e/2PACX-1vTXIhfQzTkLutk3Wp2zWwAcCXQe7GZCZGWMZHp4nMPAgInjsxWohwH5hxwd4N9iyATx-H-QBAiTGWlj/pubchart?oid=1769063513&format=image)
