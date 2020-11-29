@@ -20,6 +20,11 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 Sprint meetings on Monday, Wednesday and Friday at 12am.  
 Discussion of the next sprint on Saturday at 9am.  
 
+#### Sprint 1 burn down chart
+
+<img src="https://i.imgur.com/iifr9X6.png" width="50%" height="50%">
+
+
 #### Branch conventions
 - fix/branch_name  -  for fixes
 - feature/branch_name  -  for enhancements
@@ -32,3 +37,7 @@ Jenkins for CI/CD.
 ##### Team
 Kamil Alimov (k.alimov@innopolis.ru)
 Egor Klementev (e.klementev@innopolis.ru)
+
+## Sprint Reviews
+
+![Sprint Evaluations](https://docs.google.com/spreadsheets/d/e/2PACX-1vTXIhfQzTkLutk3Wp2zWwAcCXQe7GZCZGWMZHp4nMPAgInjsxWohwH5hxwd4N9iyATx-H-QBAiTGWlj/pubchart?oid=1769063513&format=image)
