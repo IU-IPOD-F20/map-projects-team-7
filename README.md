@@ -20,6 +20,11 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 Sprint meetings on Monday, Wednesday and Friday at 12am.  
 Discussion of the next sprint on Saturday at 9am.  
 
+#### Sprint 1 burn down chart
+
+![burn down](https://drive.google.com/file/d/1ztn4B2QkTUQxWmuVAemOHjCqIx1hoocB/view?usp=sharing)
+
+
 #### Branch conventions
 - fix/branch_name  -  for fixes
 - feature/branch_name  -  for enhancements
