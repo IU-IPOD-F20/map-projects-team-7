@@ -108,7 +108,7 @@
        <number>50</number>
       </property>
       <item>
-       <widget class="QRadioButton" name="radioButton">
+       <widget class="QRadioButton" name="radioButton_1">
         <property name="font">
          <font>
           <family>Sylfaen</family>
@@ -123,6 +123,9 @@
           <width>30</width>
           <height>30</height>
          </size>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -203,7 +206,7 @@
        <number>100</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="nextButton">
         <property name="font">
          <font>
           <family>Sylfaen</family>
@@ -216,7 +219,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="finishButton">
         <property name="font">
          <font>
           <family>Sylfaen</family>
