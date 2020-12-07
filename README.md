@@ -25,6 +25,10 @@ Discussion of the next sprint on Saturday at 9am.
 <img src="https://i.imgur.com/iifr9X6.png" width="50%" height="50%">
 
 
+#### Sprint 2
+
+<img src="https://i.imgur.com/m0LqKKY.png">
+
 #### Branch conventions
 - fix/branch_name  -  for fixes
 - feature/branch_name  -  for enhancements
