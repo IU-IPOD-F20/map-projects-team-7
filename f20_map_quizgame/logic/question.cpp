@@ -1,9 +1,12 @@
 #include "question.h"
 
-Question::Question(const char* question) : question(QString(question)) {}
+Question::Question(const char* question, int num) :
+    question(QString(question)),
+    questionNum(num)
+{}
 
-QString Question::getRightAnswer() {
-    return answers[indexOfRightAnswer];
+int Question::getRightAnswer() {
+    return indexOfRightAnswer;
 }
 
 void Question::addAnswer(const char* answer)
