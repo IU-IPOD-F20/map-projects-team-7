@@ -8,7 +8,7 @@ class Quiz
 {
 public:
     Quiz(const char* name);
-    void addQuestion(Question q);
+    void addQuestion(Question* q);
     void addQuestion(QVector<Question> vec);
     void increaseScore() { score++; }
     void reset();

@@ -2,9 +2,9 @@
 
 Quiz::Quiz(const char* name) : quizName(QString(name)) {}
 
-void Quiz::addQuestion(Question q)
+void Quiz::addQuestion(Question* q)
 {
-    questions.push_back(q);
+    questions.push_back(*q);
 }
 
 void Quiz::addQuestion(QVector<Question> vec)

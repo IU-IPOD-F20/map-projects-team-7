@@ -71,21 +71,21 @@ void QuizGame::quiz_test_case1()
 
 void QuizGame::quiz_test_case2()
 {
-    const char* questoin_text = "Question text";
+    const char* question_text = "Question text";
     const char* quiz_name = "Quiz name";
     Quiz q(quiz_name);
-    q.addQuestion(Question(questoin_text));
+    q.addQuestion(new Question(question_text, 0));
     q.getNextQuestion();
     QVERIFY(q.isLastQuestion());
 }
 
 void QuizGame::quiz_test_case3()
 {
-    const char* questoin_text = "Question text";
+    const char* question_text = "Question text";
     const char* quiz_name = "Quiz name";
     Quiz q(quiz_name);
-    Question q1(questoin_text);
-    q1.setRightAnswer(2);
+    Question* q1 = new Question(question_text, 0);
+    q1->setRightAnswer(2);
     q.addQuestion(q1);
     q.getNextQuestion();
     QVERIFY(q.isAnswerCorrect(2));
