@@ -9,11 +9,13 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    logic/question.cpp \
     logic/quiz.cpp \
     main.cpp \
     ui/mainwindow.cpp
 
 HEADERS += \
+    logic/question.h \
     logic/quiz.h \
     ui/mainwindow.h
 
