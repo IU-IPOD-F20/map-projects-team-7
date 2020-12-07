@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>576</width>
-    <height>468</height>
+    <width>705</width>
+    <height>533</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,6 +17,12 @@
    <locale language="English" country="UnitedStates"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="locale">
     <locale language="English" country="UnitedStates"/>
    </property>
@@ -372,6 +378,9 @@ shadow: rgb(0, 0, 0);</string>
             <property name="text">
              <string>Question?</string>
             </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
@@ -398,10 +407,13 @@ shadow: rgb(0, 0, 0);</string>
         <item>
          <layout class="QHBoxLayout" name="layout_answers">
           <property name="spacing">
-           <number>10</number>
+           <number>25</number>
           </property>
           <property name="leftMargin">
            <number>50</number>
+          </property>
+          <property name="rightMargin">
+           <number>25</number>
           </property>
           <property name="bottomMargin">
            <number>50</number>
@@ -548,7 +560,7 @@ shadow: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>576</width>
+     <width>705</width>
      <height>25</height>
     </rect>
    </property>

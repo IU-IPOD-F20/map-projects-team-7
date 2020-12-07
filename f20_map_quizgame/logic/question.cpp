@@ -21,7 +21,7 @@ QVector<QString> Question::getAnswers()
 
 void Question::setRightAnswer(const unsigned int &index)
 {
-    indexOfRightAnswer = index - 1;
+    indexOfRightAnswer = index;
 }
 
 size_t Question::ansNum()

@@ -58,7 +58,7 @@ void MainWindow::on_button_next_clicked()
     int answer = 1;
     for (int i = 0; i < rbRefs.size(); i++) {
         if (rbRefs[i]->isChecked()) {
-            answer = i;
+            answer = i + 1;
         }
     }
 
@@ -81,7 +81,7 @@ void MainWindow::on_button_finish_clicked()
     int answer = 1;
     for (int i = 0; i < rbRefs.size(); i++) {
         if (rbRefs[i]->isChecked()) {
-            answer = i;
+            answer = i + 1;
         }
     }
 

@@ -60,7 +60,7 @@ Quiz* Quiz::getSampleQuiz1()
 
 Quiz *Quiz::getSampleQuiz2()
 {
-    Question q1("What is 2 + 3?", 1);
+    Question q1("What is 2 * 3?", 1);
     q1.addAnswer("7");
     q1.addAnswer("6");
     q1.addAnswer("19");
