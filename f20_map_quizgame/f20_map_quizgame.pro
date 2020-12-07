@@ -9,16 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    answerset.cpp \
+    logic/quiz.cpp \
     main.cpp \
-    mainwindow.cpp \
+    ui/mainwindow.cpp
 
 HEADERS += \
-    answerset.h \
-    mainwindow.h \
+    logic/quiz.h \
+    ui/mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    ui/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
