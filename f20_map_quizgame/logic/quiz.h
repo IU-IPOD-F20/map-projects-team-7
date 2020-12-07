@@ -7,6 +7,7 @@
 class Quiz
 {
 public:
+    Quiz();
     Quiz(const char* name);
     void addQuestion(Question* q);
     void addQuestion(QVector<Question> vec);
@@ -20,6 +21,7 @@ public:
     bool isAnswerCorrect(int answer) { return answer == questions[currentQuestion].getRightAnswer(); }
     static Quiz* getSampleQuiz1();
     static Quiz* getSampleQuiz2();
+    ~Quiz();
 
 private:
     QString quizName;

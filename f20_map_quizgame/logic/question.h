@@ -8,6 +8,7 @@
 class Question
 {
 public:
+    Question();
     Question(const char* question, int num = 0);
     QString getQuestion() { return question; }
     int getRightAnswer();
@@ -16,6 +17,7 @@ public:
     void setRightAnswer(const unsigned int & index);
     size_t ansNum();
     int getQuestionNumber() { return questionNum; }
+    ~Question();
 
 private:
     QString question;

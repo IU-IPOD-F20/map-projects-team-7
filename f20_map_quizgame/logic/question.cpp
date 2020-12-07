@@ -1,5 +1,10 @@
 #include "question.h"
 
+Question::Question()
+{
+
+}
+
 Question::Question(const char* question, int num) :
     question(QString(question)),
     questionNum(num)
@@ -27,4 +32,9 @@ void Question::setRightAnswer(const unsigned int &index)
 size_t Question::ansNum()
 {
     return answers.size();
+}
+
+Question::~Question()
+{
+
 }

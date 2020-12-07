@@ -1,5 +1,10 @@
 #include "quiz.h"
 
+Quiz::Quiz()
+{
+
+}
+
 Quiz::Quiz(const char* name) : quizName(QString(name)) {}
 
 void Quiz::addQuestion(Question* q)
@@ -91,4 +96,9 @@ Quiz *Quiz::getSampleQuiz2()
     sampleQuiz2->addQuestion(QVector<Question>{q1, q2, q3, q4});
 
     return sampleQuiz2;
+}
+
+Quiz::~Quiz()
+{
+
 }
