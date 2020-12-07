@@ -1,7 +1,7 @@
 #include <QtTest>
 
-#include "../f20_map_quizgame/logic/quiz.h"
-#include "../f20_map_quizgame/logic/question.h"
+#include "../f20_map_quizgame/logic/quiz.cpp"
+#include "../f20_map_quizgame/logic/question.cpp"
 
 class QuizGame : public QObject
 {
