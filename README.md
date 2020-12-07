@@ -19,6 +19,17 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 ### How to start app:
 
 ##### Ubuntu:
+Install qmake, make
+```
+sudo apt-get update -y
+```
+```
+sudo apt-get install -y qt5-qmake
+```
+```
+sudo apt install qt5-default
+```
+
 Using clone, qmake, make and run the project
 ```
 clone git https://github.com/IU-IPOD-F20/map-projects-team-7.git
