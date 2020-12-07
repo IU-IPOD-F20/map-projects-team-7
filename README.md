@@ -16,6 +16,23 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 
 2. Product Backlog (https://github.com/IU-IPOD-F20/map-projects-team-7/projects/1)
 
+### How to start app:
+
+##### Ubuntu:
+Using clone, qmake, make and run the project
+```
+clone git https://github.com/IU-IPOD-F20/map-projects-team-7.git
+
+cd f20_map_quizgame
+
+qmake
+
+make
+
+./f20_map_quizgame
+```
+
+
 ### Organization
 Sprint meetings on Monday, Wednesday and Friday at 12am.  
 Discussion of the next sprint on Saturday at 9am.  
