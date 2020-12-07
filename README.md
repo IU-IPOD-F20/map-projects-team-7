@@ -22,13 +22,17 @@ User-friendly interface, the ability to edit the test, setting the test of time,
 Using clone, qmake, make and run the project
 ```
 clone git https://github.com/IU-IPOD-F20/map-projects-team-7.git
-
+```
+```
 cd f20_map_quizgame
-
+```
+```
 qmake
-
+```
+```
 make
-
+```
+```
 ./f20_map_quizgame
 ```
 
