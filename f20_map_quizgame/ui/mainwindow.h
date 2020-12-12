@@ -46,6 +46,16 @@ private slots:
 
     void on_button_finish_registeration_clicked();
 
+    void on_button_add_answer_clicked();
+
+    void on_button_remove_answer_clicked();
+
+    void on_button_finish_question_creation_clicked();
+
+    void on_button_finish_quiz_creation_clicked();
+
+    void on_button_add_question_clicked();
+
 private:
     Ui::MainWindow *ui;
     QVector<Quiz> quizSet;
@@ -55,5 +65,6 @@ private:
     bool checkCredentials(QString login, QString password);
     User* localUser;
     QButtonGroup registerGroup;
+    QVector<Question> createQuestions;
 };
 #endif // MAINWINDOW_H

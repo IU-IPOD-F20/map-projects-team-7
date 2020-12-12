@@ -38,16 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_title_of_the_game_4->setGraphicsEffect(shadowEffect);
     ui->label_title_of_the_game_5->setGraphicsEffect(shadowEffect);
     ui->button_finish->setVisible(false);
-
-    // Add sample quizzes to quiz set
-    quizSet.append(*Quiz::getSampleQuiz1());
-    quizSet.append(*Quiz::getSampleQuiz2());
-
-    // Add available quizzes to the list
-    for (auto quiz : quizSet) {
-        ui->list_quizzes->addItem(quiz.getName());
-    }
-
 }
 
 MainWindow::~MainWindow()
@@ -57,6 +47,46 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_button_to_quiz_list_clicked()
 {
+    quizSet.clear();
+
+    // Add sample quizzes to quiz set
+    quizSet.append(*Quiz::getSampleQuiz1());
+    quizSet.append(*Quiz::getSampleQuiz2());
+
+    // Add stored quizzes to quiz set
+    QFile savedFile("quizzes.json");
+    if (!savedFile.open(QIODevice::ReadOnly)) {
+        qDebug() << "Couldn't open quizzes file.";
+    }
+    QByteArray savedData = savedFile.readAll();
+    QJsonDocument loadDoc(QJsonDocument::fromJson(savedData));
+    QJsonArray quizzes = loadDoc.array();
+    for (int i = 0; i < quizzes.size(); i++) {
+        QJsonObject quiz = quizzes[i].toObject();
+        Quiz q(quiz["title"].toString().toLocal8Bit().data());
+        QJsonArray questions = quiz["questions"].toArray();
+        for (int j = 0; j < questions.size(); j++) {
+            QJsonObject question = questions[j].toObject();
+            Question* qst = new Question(question["title"].toString().toLocal8Bit().data(), question["id"].toInt());
+            qst->setRightAnswer(question["right_answer"].toInt());
+            QJsonArray answers = question["answers"].toArray();
+            for (int k = 0; k < answers.size(); k++) {
+                qst->addAnswer(answers[k].toString().toLocal8Bit().data());
+            }
+            q.addQuestion(qst);
+        }
+        quizSet.append(q);
+    }
+    savedFile.close();
+
+    // Add available quizzes to the list
+    for (int i = 0; i < ui->list_quizzes->count(); i++) {
+        delete ui->list_quizzes->takeItem(i);
+    }
+    for (auto quiz : quizSet) {
+        ui->list_quizzes->addItem(quiz.getName());
+    }
+
     ui->stackedWidget->setCurrentIndex(quizzes_page_index); // To the Quiz list page
 }
 
@@ -68,7 +98,6 @@ void MainWindow::on_button_attempt_quiz_clicked()
 
     ui->stackedWidget->setCurrentIndex(main_page_index); // To the Quiz page
 }
-
 
 void MainWindow::on_button_next_clicked()
 {
@@ -145,9 +174,11 @@ void MainWindow::on_button_login_clicked()
         } else {
             ui->stackedWidget->setCurrentIndex(start_page_index);
         }
+        ui->line_edit_login->setText("");
+        ui->line_edit_password->setText("");
     }
     else {
-        // LOGIN ERROR
+        qDebug() << "LOGIN ERROR!";
     }
 }
 
@@ -179,10 +210,101 @@ void MainWindow::on_button_finish_registeration_clicked()
     if (!savedFile2.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
         qDebug() << "Couldn't open save file.";
     }
-    savedFile2.write(QJsonDocument(QJsonDocument(users)).toJson());
+    savedFile2.write(QJsonDocument(users).toJson());
     savedFile2.close();
 
     ui->stackedWidget->setCurrentIndex(login_page_index);
+}
+
+void MainWindow::on_button_add_answer_clicked()
+{
+    ui->button_remove_answer->setEnabled(true);
+    ui->list_view_question_answers->addItem(ui->line_edit_answer_text->text());
+    ui->line_edit_answer_text->setText("");
+}
+
+void MainWindow::on_button_remove_answer_clicked()
+{
+    for (auto ans : ui->list_view_question_answers->selectedItems()) {
+        delete ui->list_view_question_answers->takeItem(ui->list_view_question_answers->row(ans));
+    }
+    ui->line_edit_answer_text->setText("");
+    if (ui->list_view_question_answers->count() == 0) {
+        ui->button_remove_answer->setEnabled(false);
+    }
+}
+
+void MainWindow::on_button_finish_question_creation_clicked()
+{
+    Question q(ui->line_edit_question_text->text().toLocal8Bit().data());
+    for (int i = 0; i < ui->list_view_question_answers->count(); i++) {
+        QListWidgetItem* item = ui->list_view_question_answers->item(i);
+        q.addAnswer(item->text().toLocal8Bit().data());
+    }
+    for (int i = 0; i < ui->list_view_question_answers->count(); i++) {
+        delete ui->list_view_question_answers->takeItem(i);
+    }
+    ui->list_view_question_answers->clear();
+    q.setRightAnswer(ui->spin_correct_answer->value());
+    createQuestions.append(q);
+    ui->spin_correct_answer->setValue(1);
+    ui->list_quiz_questions->addItem(ui->line_edit_question_title->text());
+    ui->line_edit_question_text->setText("");
+    ui->line_edit_question_title->setText("");
+    ui->stackedWidget->setCurrentIndex(quiz_create_page_index);
+}
+
+void MainWindow::on_button_finish_quiz_creation_clicked()
+{
+    Quiz q(ui->line_edit_quiz_title->text().toLocal8Bit().data());
+    q.addQuestion(createQuestions);
+    quizSet.append(q);
+
+    QFile savedFile("quizzes.json");
+    if (!savedFile.open(QIODevice::ReadOnly)) {
+        qDebug() << "Couldn't open quizzes file.";
+    }
+    QByteArray savedData = savedFile.readAll();
+    QJsonDocument loadDoc(QJsonDocument::fromJson(savedData));
+    QJsonArray quizzes = loadDoc.array();
+    QJsonObject newQuiz;
+    newQuiz.insert("title", ui->line_edit_quiz_title->text());
+    QJsonArray questions;
+    int i = 1;
+    for (auto qst : createQuestions) {
+        QJsonObject qstJson;
+        qstJson.insert("id", i++);
+        qstJson.insert("title", qst.getQuestion());
+        qstJson.insert("right_answer", qst.getRightAnswer());
+        QJsonArray answers;
+        for (auto ans : qst.getAnswers()) {
+            qDebug() << "FFF " << qst.getAnswers().size();
+            answers.append(ans);
+        }
+        qstJson.insert("answers", answers);
+        questions.append(qstJson);
+    }
+    createQuestions.clear();
+    newQuiz.insert("questions", questions);
+    quizzes.append(newQuiz);
+    savedFile.close();
+
+    QFile savedFile2("quizzes.json");
+    if (!savedFile2.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
+        qDebug() << "Couldn't open save file.";
+    }
+    savedFile2.write(QJsonDocument(quizzes).toJson());
+    savedFile2.close();
+
+    ui->stackedWidget->setCurrentIndex(login_page_index);
+}
+
+void MainWindow::on_button_add_question_clicked()
+{
+    if (ui->list_view_question_answers->count() == 0) {
+        ui->button_remove_answer->setEnabled(false);
+    }
+    ui->stackedWidget->setCurrentIndex(question_create_page_index);
 }
 
 
@@ -223,7 +345,6 @@ bool MainWindow::checkCredentials(QString login, QString password)
     QFile savedFile("users.json");
 
     if (!savedFile.open(QIODevice::ReadOnly)) {
-        qDebug() << "NO";
         return false;
     }
 

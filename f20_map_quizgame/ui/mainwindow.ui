@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>744</width>
-    <height>641</height>
+    <width>641</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -890,9 +890,9 @@ shadow: rgb(0, 0, 0);</string>
              </widget>
             </item>
             <item>
-             <widget class="QListView" name="list_view_quiz_questions">
+             <widget class="QListWidget" name="list_quiz_questions">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1142,6 +1142,41 @@ shadow: rgb(0, 0, 0);</string>
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QLabel" name="label_correct_answer">
+              <property name="font">
+               <font>
+                <family>Sylfaen</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="text">
+               <string>Correct answer number</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spin_correct_answer">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>5</number>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item>
@@ -1238,9 +1273,9 @@ shadow: rgb(0, 0, 0);</string>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_11">
             <item>
-             <widget class="QListView" name="list_view_quiz_questions_2">
+             <widget class="QListWidget" name="list_view_question_answers">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1378,7 +1413,7 @@ shadow: rgb(0, 0, 0);</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="button_finish_quiz_creation_2">
+           <widget class="QPushButton" name="button_finish_question_creation">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
               <horstretch>0</horstretch>
@@ -1944,7 +1979,7 @@ shadow: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>744</width>
+     <width>641</width>
      <height>25</height>
     </rect>
    </property>
