@@ -37,7 +37,7 @@ void QuizGame::question_test_case1()
 {
     const char* qtext = "Question text";
     Question q(qtext);
-    QCOMPARE(q.getQuestion(), qtext);
+    QCOMPARE(q.getQuestion(), QString(qtext));
 }
 
 void QuizGame::question_test_case2()
@@ -50,7 +50,8 @@ void QuizGame::question_test_case3()
 {
     Question q("Question text", 1);
     q.addAnswer("Answer text");
-    QCOMPARE(q.ansNum(), 1);
+    unsigned long ans = 1;
+    QCOMPARE(q.ansNum(), ans);
 }
 
 void QuizGame::question_test_case4()
@@ -66,7 +67,7 @@ void QuizGame::quiz_test_case1()
 {
     const char* name = "Quiz name";
     Quiz q(name);
-    QCOMPARE(q.getName(), name);
+    QCOMPARE(q.getName(), QString(name));
 }
 
 void QuizGame::quiz_test_case2()
