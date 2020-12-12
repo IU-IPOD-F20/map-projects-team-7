@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QRadioButton>
 #include <QVector>
+#include <QButtonGroup>
 
 #include "logic/quiz.h"
+#include "logic/user.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +18,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    const int login_page_index = 0;
+    const int registration_page_index = 1;
+    const int quiz_create_page_index = 2;
+    const int question_create_page_index = 3;
+    const int start_page_index = 4;
+    const int quizzes_page_index = 5;
+    const int main_page_index = 6;
+    const int finish_page_index = 7;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -30,11 +40,20 @@ private slots:
 
     void on_button_back_to_quiz_list_clicked();
 
+    void on_button_register_clicked();
+
+    void on_button_login_clicked();
+
+    void on_button_finish_registeration_clicked();
+
 private:
     Ui::MainWindow *ui;
     QVector<Quiz> quizSet;
     Quiz* findQuizByName(QString name);
     void setUpQuizPage(Question q);
     QVector<QRadioButton*> rbRefs;
+    bool checkCredentials(QString login, QString password);
+    User* localUser;
+    QButtonGroup registerGroup;
 };
 #endif // MAINWINDOW_H
