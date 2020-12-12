@@ -11,12 +11,14 @@ CONFIG += c++11
 SOURCES += \
     logic/question.cpp \
     logic/quiz.cpp \
+    logic/user.cpp \
     main.cpp \
     ui/mainwindow.cpp
 
 HEADERS += \
     logic/question.h \
     logic/quiz.h \
+    logic/user.h \
     ui/mainwindow.h
 
 FORMS += \
